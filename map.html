@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Верстка «istokprom»</title>
+</head>
+
+<body>
+	<div class="rootpage">
+		<h1>Верстка «istokprom»</h1>
+		<div class="rootpage__info">
+			Описание
+		</div>
+		<h2>Готовые страницы:</h2>
+		<ol class="rootpage__list">
+			<li><a target="_blank" href="services-one.html">Услуги детально</a></li>
+			<li><a target="_blank" href="services.html">Услуги</a></li>
+			<li><a target="_blank" href="prices.html">Цены</a></li>
+			<li><a target="_blank" href="articles-one.html">Статьи детально</a></li>
+			<li><a target="_blank" href="articles.html">Статьи</a></li>
+			<li><a target="_blank" href="about.html">О компании</a></li>
+			<li><a target="_blank" href="portfolio.html">Портфолио</a></li>
+			<li><a target="_blank" href="contacts.html">Контакты</a></li>
+		</ol>
+		<h2>Попапы:</h2>
+		<ol class="rootpage__list">
+			<li><a target="_blank" href="index.html#"></a></li>
+		</ol>
+		<div class="rootpage__tnx">
+			<h2>Спасибо за заказ!</h2>
+			<p>Буду рад хорошему отзыву.</p>
+			<p>Обращайтесь еще!</p>
+		</div>
+		<div class="rootpage__contacts">
+			<h2>Мои контакты:</h2>
+			<p>Почта: <a href="mailto:thetigran21@gmail.com">thetigran21@gmail.com</a></p>
+			<p>Телефон: <a href="tel:89957895924">8 995 789 5924</a></p>
+			<p>Соц. сети: <a href="https://t.me/Tigran1963">Telegram</a>, <a href="https://wa.me/79957895924">WhatsApp</a>
+			</p>
+		</div>
+	</div>
+</body>
+<style>
+	@charset "UTF-8";
+	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
+
+	*,
+	*::before,
+	*::after {
+		padding: 0px;
+		margin: 0px;
+		border: 0px;
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		min-width: 320px;
+		width: 100%;
+		color: #151625;
+		background: #F1F5FA;
+	}
+
+	body {
+		font-family: Montserrat;
+		font-size: 100%;
+		line-height: 1;
+		font-size: 1rem;
+	}
+
+	a {
+		text-decoration: underline;
+		color: #E1004A
+	}
+
+	a:visited {
+		text-decoration: underline;
+		color: #930434;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	ul li {
+		list-style: none;
+	}
+
+	img {
+		vertical-align: top;
+	}
+
+	.wrapper {
+		width: 100%;
+		min-height: 100%;
+		overflow: hidden;
+	}
+
+	.rootpage {
+		padding: 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	@media (max-width: 767px) {
+		.rootpage {
+			padding: 30px 15px;
+		}
+	}
+
+	h1 {
+		color: #151625;
+		font-size: 2.5rem;
+		margin: 0px 0px 1.25rem 0px;
+	}
+
+	@media (max-width: 767px) {
+		h1 {
+			font-size: 1.85rem;
+			margin: 0px 0px 1.25rem 0px;
+		}
+	}
+
+	h2 {
+		color: #151625;
+		font-size: 1.25rem;
+		margin: 0px 0px 1rem 0px;
+	}
+
+	@media (max-width: 767px) {
+		h2 {
+			font-size: 1.125rem;
+			margin: 0px 0px 1rem 0px;
+		}
+	}
+
+	.rootpage__title {
+		background-color: #01528A;
+		border-radius: 10px;
+		padding: 8px 10px 10px;
+	}
+
+	.rootpage__info {
+		line-height: 140%;
+		margin: 0px 0px 1.5rem 0px;
+	}
+
+	.rootpage__list {
+		margin: 0px 0px 2.25rem 1.25rem;
+	}
+
+	.rootpage__list li:not(:last-child) {
+		margin: 0px 0px 15px 0px;
+	}
+
+	.rootpage__contacts,
+	.rootpage__tnx {
+		border-radius: 200px;
+		padding: 20px 65px;
+		line-height: 140%;
+		width: 382px;
+		color: #4C70B5;
+		background: #F1F3F8;
+		border: 1px solid rgba(76, 112, 181, 0.3);
+	}
+
+	@media (max-width: 767px) {
+
+		.rootpage__contacts,
+		.rootpage__tnx {
+			border-radius: 40px;
+			padding: 20px;
+			width: 360px;
+		}
+	}
+
+	@media (max-width: 480px) {
+
+		.rootpage__contacts,
+		.rootpage__tnx {
+			border-radius: 30px;
+			padding: 20px;
+			width: 300px;
+		}
+	}
+
+	.rootpage__tnx {
+		margin: 0px 0px 1rem 0px;
+	}
+</style>
+
+</html>
