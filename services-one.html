@@ -25,8 +25,42 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
 	<link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230316181645">
-	<link rel="stylesheet" href="css/main.css?_v=20230316181645">
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;" type="text/javascript"></script>
+	<script>ymaps.ready(function () {
+		var myMap = new ymaps.Map('map', {
+			center: [56.976623, 41.050844],
+			zoom: 17
+		}, {
+			searchControlProvider: 'yandex#search'
+		}),
+
+			//  // Создаём макет содержимого.
+			//  MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+			// 	  '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+			//  ),
+
+			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+				hintContent: 'г. Иваново, ул. Маршала Жаворонкова, 9',
+				balloonContent: 'г. Иваново, ул. Маршала Жаворонкова, 9'
+			}, {
+				// Опции.
+				// Необходимо указать данный тип макета.
+				iconLayout: 'default#image',
+				// Своё изображение иконки метки.
+				iconImageHref: 'img/icons/mymapicon.svg',
+				// Размеры метки.
+				iconImageSize: [30, 54],
+				// Смещение левого верхнего угла иконки относительно
+				// её "ножки" (точки привязки).
+				iconImageOffset: [-28, -38]
+			});
+
+		myMap.geoObjects
+			.add(myPlacemark)
+	});</script>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css?_v=20230316164436">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230319231432">
+	<link rel="stylesheet" href="css/main.css?_v=20230319231432">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -256,7 +290,7 @@
 				<div class="prices__container">
 					<div class="prices__head">
 						<h2 class="prices__title section-title">Прайс-лист</h2>
-						<a href="" class="prices__head-button btn btn-tr-grey">Узнать подробнее</a>
+						<a href="" data-da=".prices__container, 479.98" class="prices__head-button btn btn-tr-grey">Узнать подробнее</a>
 					</div>
 					<div class="prices__table info-table">
 						<div class="info-table__head">
@@ -281,7 +315,7 @@
 							<span class="info-table__row-text">4.90 ₽</span>
 						</div>
 						<a href="" class="info-table__title">Услуга лазерной резки <img src="img/icons/link.svg" alt="иконка"></a>
-						<div class="info-table__row">
+						<div class="info-table__row info-table__row_last">
 							<span class="info-table__row-text">Стоимость резки за 1 см</span>
 							<span class="info-table__row-text">0.10 ₽</span>
 						</div>
@@ -478,25 +512,25 @@
 						</div>
 						<div class="service-one-cycle__card">
 							<div class="service-one-cycle__card-icon">
-								<img src="img/serviceonecycle/01.svg" alt="иконка">
+								<img src="img/serviceonecycle/02.svg" alt="иконка">
 							</div>
 							<div class="service-one-cycle__title">2. Утверждаем образец</div>
 						</div>
 						<div class="service-one-cycle__card">
 							<div class="service-one-cycle__card-icon">
-								<img src="img/serviceonecycle/01.svg" alt="иконка">
+								<img src="img/serviceonecycle/03.svg" alt="иконка">
 							</div>
 							<div class="service-one-cycle__title">3. Изготавливаем заказ</div>
 						</div>
 						<div class="service-one-cycle__card">
 							<div class="service-one-cycle__card-icon">
-								<img src="img/serviceonecycle/01.svg" alt="иконка">
+								<img src="img/serviceonecycle/04.svg" alt="иконка">
 							</div>
 							<div class="service-one-cycle__title">4. Упаковываем</div>
 						</div>
 						<div class="service-one-cycle__card service-one-cycle__card_prelast">
 							<div class="service-one-cycle__card-icon">
-								<img src="img/serviceonecycle/01.svg" alt="иконка">
+								<img src="img/serviceonecycle/05.svg" alt="иконка">
 							</div>
 							<div class="service-one-cycle__title">5. Доставляем транспортной компанией или отдаем
 								со склада</div>
@@ -519,7 +553,7 @@
 							<div class="card-order__image">
 								<picture><source srcset="img/order/01.webp" type="image/webp"><img src="img/order/01.png" alt="картинка"></picture>
 							</div>
-							<div class="card-order__title">1. Логотип</div>
+							<div class="card-order__title card-order__title_first">1. Логотип</div>
 							<p class="card-order__text">Прислать нам логотип или рисунок в форматах: Corel, Illustrator, PDF,
 								JPG (хорошего качества)</p>
 						</div>
@@ -574,15 +608,7 @@
 							</div>
 						</div>
 						<div class="contacts__map">
-							<div style="position:relative;overflow:hidden;">
-								<a href="https://yandex.ru/maps/5/ivanovo/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Иваново
-								</a>
-								<a href="https://yandex.ru/maps/5/ivanovo/house/ulitsa_marshala_zhavoronkova_9/YEgYdgJgQUEDQFtsfXV2d3phZw==/?ll=41.050843%2C56.976623&utm_medium=mapframe&utm_source=maps&z=17.25" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Маршала Жаворонкова, 9 —
-									Яндекс Карты
-								</a>
-								<iframe src="https://yandex.ru/map-widget/v1/?ll=41.050843%2C56.976623&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjE3MzE1NxJR0KDQvtGB0YHQuNGPLCDQmNCy0LDQvdC-0LLQviwg0YPQu9C40YbQsCDQnNCw0YDRiNCw0LvQsCDQltCw0LLQvtGA0L7QvdC60L7QstCwLCA5IgoNETQkQhUQ6GNC&z=17.25" width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position:relative;">
-								</iframe>
-							</div>
+							<div id="map"></div>
 						</div>
 					</div>
 				</div>
@@ -615,8 +641,7 @@
 			<section class="section section__products">
 				<div class="section__container-right products">
 					<div class="section__title">
-						<h2 class="products__title title-mob-2 color-black aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-duration="600">Вас также могут
-							заинтересовать</h2>
+						<h2 class="products__title title-mob-2 color-black aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-duration="600">Продукция</h2>
 						<div class="products__arrows aos-init aos-animate" data-aos="fade-up" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-duration="600" data-aos-delay="200">
 							<button class="products__arrow products__arrow-prev btn btn-tr-blue swiper-button-disabled" type="button" disabled="" tabindex="-1" aria-label="Previous slide" aria-controls="swiper-wrapper-655bc1362f5568102" aria-disabled="true">
 								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -804,9 +829,10 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230316181645"></script>
-	<script src="js/vendor.js?_v=20230316181645"></script>
-	<script src="js/main.js?_v=20230316181645"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js?_v=20230316180457"></script>
+	<script src="js/app.min.js?_v=20230319231432"></script>
+	<script src="js/vendor.js?_v=20230319231432"></script>
+	<script src="js/main.js?_v=20230319231432"></script>
 </body>
 
 </html>

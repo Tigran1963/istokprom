@@ -25,8 +25,42 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
 	<link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230316181645">
-	<link rel="stylesheet" href="css/main.css?_v=20230316181645">
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;" type="text/javascript"></script>
+	<script>ymaps.ready(function () {
+		var myMap = new ymaps.Map('map', {
+			center: [56.976623, 41.050844],
+			zoom: 17
+		}, {
+			searchControlProvider: 'yandex#search'
+		}),
+
+			//  // Создаём макет содержимого.
+			//  MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+			// 	  '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+			//  ),
+
+			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+				hintContent: 'г. Иваново, ул. Маршала Жаворонкова, 9',
+				balloonContent: 'г. Иваново, ул. Маршала Жаворонкова, 9'
+			}, {
+				// Опции.
+				// Необходимо указать данный тип макета.
+				iconLayout: 'default#image',
+				// Своё изображение иконки метки.
+				iconImageHref: 'img/icons/mymapicon.svg',
+				// Размеры метки.
+				iconImageSize: [30, 54],
+				// Смещение левого верхнего угла иконки относительно
+				// её "ножки" (точки привязки).
+				iconImageOffset: [-28, -38]
+			});
+
+		myMap.geoObjects
+			.add(myPlacemark)
+	});</script>
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css?_v=20230316164436">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230319231432">
+	<link rel="stylesheet" href="css/main.css?_v=20230319231432">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -201,15 +235,7 @@
 							</div>
 						</div>
 						<div class="contacts__map">
-							<div style="position:relative;overflow:hidden;">
-								<a href="https://yandex.ru/maps/5/ivanovo/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Иваново
-								</a>
-								<a href="https://yandex.ru/maps/5/ivanovo/house/ulitsa_marshala_zhavoronkova_9/YEgYdgJgQUEDQFtsfXV2d3phZw==/?ll=41.050843%2C56.976623&utm_medium=mapframe&utm_source=maps&z=17.25" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Маршала Жаворонкова, 9 —
-									Яндекс Карты
-								</a>
-								<iframe src="https://yandex.ru/map-widget/v1/?ll=41.050843%2C56.976623&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjE3MzE1NxJR0KDQvtGB0YHQuNGPLCDQmNCy0LDQvdC-0LLQviwg0YPQu9C40YbQsCDQnNCw0YDRiNCw0LvQsCDQltCw0LLQvtGA0L7QvdC60L7QstCwLCA5IgoNETQkQhUQ6GNC&z=17.25" width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position:relative;">
-								</iframe>
-							</div>
+							<div id="map"></div>
 						</div>
 					</div>
 				</div>
@@ -412,9 +438,10 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230316181645"></script>
-	<script src="js/vendor.js?_v=20230316181645"></script>
-	<script src="js/main.js?_v=20230316181645"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js?_v=20230316180457"></script>
+	<script src="js/app.min.js?_v=20230319231432"></script>
+	<script src="js/vendor.js?_v=20230319231432"></script>
+	<script src="js/main.js?_v=20230319231432"></script>
 </body>
 
 </html>
