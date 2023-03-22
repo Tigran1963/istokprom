@@ -3729,7 +3729,7 @@
             pagination: {
                 el: ".about-history__years",
                 bulletClass: "about-history__years-item",
-                bulletActiveClass: "is-active",
+                bulletActiveClass: "about-history__years-item_is-active",
                 clickable: true,
                 type: "custom"
             },
@@ -5841,21 +5841,25 @@ PERFORMANCE OF THIS SOFTWARE.
     }));
     const aboutHistoryBtnPrev = document.querySelector(".about-history__slider-control .swiper-button-prev");
     const aboutHistoryBtnNext = document.querySelector(".about-history__slider-control .swiper-button-next");
-    const aboutHistoryYears = document.querySelector(".about-history__years");
-    document.querySelectorAll(".about-history__years-item");
+    document.querySelector(".about-history__years");
+    const aboutHistoryYearsItem = document.querySelectorAll(".about-history__years-item");
     if (aboutHistoryBtnPrev) aboutHistoryBtnPrev.addEventListener("click", (function(e) {
-        aboutHistoryYears.scrollBy({
-            top: 0,
-            left: -250,
-            behavior: "smooth"
-        });
+        aboutHistoryYearsItem.forEach((item => {
+            if (item.classList.contains("is-active")) item.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "start"
+            });
+        }));
     }));
     if (aboutHistoryBtnNext) aboutHistoryBtnNext.addEventListener("click", (function(e) {
-        aboutHistoryYears.scrollBy({
-            top: 0,
-            left: 200,
-            behavior: "smooth"
-        });
+        aboutHistoryYearsItem.forEach((item => {
+            if (item.classList.contains("is-active")) item.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+                inline: "start"
+            });
+        }));
     }));
     window["FLS"] = false;
     isWebp();
