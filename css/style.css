@@ -390,12 +390,19 @@ h6 {
   color: #151625;
 }
 
+.info-table {
+  width: 100%;
+}
+
 .info-table__head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 0.75rem 1rem;
   gap: 0.875rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .info-table__head-text {
@@ -413,6 +420,7 @@ h6 {
   font-weight: 600;
   font-size: 1.25rem;
   line-height: 150%;
+  text-align: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

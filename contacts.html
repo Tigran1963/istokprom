@@ -25,42 +25,9 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
 	<link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;" type="text/javascript"></script>
-	<script>ymaps.ready(function () {
-		var myMap = new ymaps.Map('map', {
-			center: [56.976623, 41.050844],
-			zoom: 17
-		}, {
-			searchControlProvider: 'yandex#search'
-		}),
-
-			//  // Создаём макет содержимого.
-			//  MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-			// 	  '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-			//  ),
-
-			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-				hintContent: 'г. Иваново, ул. Маршала Жаворонкова, 9',
-				balloonContent: 'г. Иваново, ул. Маршала Жаворонкова, 9'
-			}, {
-				// Опции.
-				// Необходимо указать данный тип макета.
-				iconLayout: 'default#image',
-				// Своё изображение иконки метки.
-				iconImageHref: 'img/icons/mymapicon.svg',
-				// Размеры метки.
-				iconImageSize: [30, 54],
-				// Смещение левого верхнего угла иконки относительно
-				// её "ножки" (точки привязки).
-				iconImageOffset: [-28, -38]
-			});
-
-		myMap.geoObjects
-			.add(myPlacemark)
-	});</script>
 	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css?_v=20230316164436">
-	<link rel="stylesheet" href="css/style.min.css?_v=20230322160125">
-	<link rel="stylesheet" href="css/main.css?_v=20230322160125">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230401003303">
+	<link rel="stylesheet" href="css/main.css?_v=20230401003303">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -439,9 +406,9 @@
 		</footer>
 	</div>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js?_v=20230316180457"></script>
-	<script src="js/app.min.js?_v=20230322160125"></script>
-	<script src="js/vendor.js?_v=20230322160125"></script>
-	<script src="js/main.js?_v=20230322160125"></script>
+	<script src="js/app.min.js?_v=20230401003303"></script>
+	<script src="js/vendor.js?_v=20230401003303"></script>
+	<script src="js/main.js?_v=20230401003303"></script>
 </body>
 
 </html>
